@@ -15,6 +15,11 @@ public class Product {
         stock -= quantity;
     }
 
+    public void stockCheck(int quantity) throws InsufficientStockException {
+        if (quantity > stock)
+            throw new InsufficientStockException("Insufficient stock. " + name + "is not available.");
+    }
+
     public String getName() {
         return name;
     }
